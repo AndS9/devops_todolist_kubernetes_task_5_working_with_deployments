@@ -21,4 +21,4 @@ Testing NodePort service:
 
 Get ip from one of your node and use it in browser:
 
-http://ip-node:30123
+http://ip-node:30080
