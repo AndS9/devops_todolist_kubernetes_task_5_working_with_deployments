@@ -11,28 +11,11 @@
 
 ### I request 256Mi memory and 100m cpu because it will be enough to normal function for little python web server, and limit it to 512Mi and 200m for successful startup.
 
-### In autoscaling I choose average utilization for memory and cpu 80% of requested because it will be enough  for autoscaler to react on increasing load on server.
+### In autoscaling I choose average utilization for memory and cpu 70% of requested because it will be enough  for autoscaler to react on increasing load on server.
 
 ### MinUnavailable i choose 1, because min replicas is 2, and it'll be right if one of server during rolling update will be working. And surge 1 additional pod for balance if 1 pod is updating.
 
 ## Running app:
- From busybox:
- 
-1. Run shell inside busybox pod:
-    ```
-   kubectl -n todoapp exec busybox -it -- /bin/sh
-   ```
-2. In shell run curl:
-    ```
-   curl http://todoapp-service.todoapp.svc.cluster.local
-   ```
-
-Test ClusterIP using port-forward:
-
-    kubectl port-forward -n todoapp service/todoapp-service 8081:80
-
-and try in browser: http://localhost:8081
-
 
 Testing NodePort service:
 

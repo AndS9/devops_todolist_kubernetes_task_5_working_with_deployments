@@ -1,3 +1,4 @@
+#busybox pod manifest
 apiVersion: v1
 kind: Pod
 metadata:
